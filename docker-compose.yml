@@ -1,0 +1,12 @@
+services:
+  care-companion:
+    build: .
+    env_file: .env
+    ports:
+      - "3000:3000"
+    volumes:
+      - care_companion_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  care_companion_data:

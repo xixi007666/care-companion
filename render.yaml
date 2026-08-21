@@ -1,0 +1,27 @@
+# Render Blueprint for a small, single-instance closed beta.
+# Do not put API keys or a real database in this repository.
+services:
+  - type: web
+    name: care-companion-pilot
+    runtime: node
+    region: singapore
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeployTrigger: commit
+    disk:
+      name: care-companion-data
+      mountPath: /opt/render/project/src/data
+      sizeGB: 1
+    envVars:
+      - key: APP_ENCRYPTION_KEY
+        generateValue: true
+      - key: DATABASE_PATH
+        value: /opt/render/project/src/data/care-companion.sqlite
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: ALLOW_HTTP_LLM
+        value: "false"
+      - key: AI_CALLS_PER_HOUR
+        value: "20"

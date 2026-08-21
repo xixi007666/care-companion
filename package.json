@@ -1,0 +1,13 @@
+{
+  "name": "care-companion-live",
+  "version": "0.1.0",
+  "private": true,
+  "description": "BYOK family care pilot with encrypted local persistence and an OpenAI-compatible LLM gateway.",
+  "engines": { "node": ">=22.5.0" },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "mock-llm": "node scripts/mock-llm.js",
+    "test:e2e": "node test/e2e.mjs"
+  }
+}
