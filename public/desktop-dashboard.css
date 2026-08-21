@@ -1,0 +1,70 @@
+/* Wide-screen dashboard treatment. Mobile layouts remain intentionally compact. */
+.safety-priority { border-color:#e9cba8; background:#fffaf2; }
+.safety-action-card { background:linear-gradient(135deg,#f4faf7,#ffffff); }
+.safety-segment { margin:0 0 5px; color:#56786a; font-size:12px; font-weight:700; }
+.safety-action-card h3 { margin:0 0 12px; line-height:1.4; }
+.safety-steps { display:grid; gap:9px; }
+.safety-step { display:flex; gap:10px; align-items:flex-start; padding:11px; border:1px solid #d9e7df; border-radius:12px; background:#fff; }
+.safety-step > span { display:grid; flex:0 0 24px; width:24px; height:24px; place-items:center; border-radius:50%; color:#fff; background:var(--brand); font-size:12px; font-weight:800; }
+.safety-step strong { display:block; font-size:13px; }
+.safety-step p { margin:3px 0 0; color:#506a5f; font-size:12px; line-height:1.55; }
+.safety-handoff { margin-top:11px; padding:11px 12px; border-radius:12px; background:#eaf4ef; color:#47675a; font-size:12px; line-height:1.55; }
+.safety-handoff ul { margin:5px 0 0; padding-left:18px; }
+.safety-handoff li + li { margin-top:2px; }
+.safety-ask-form h3 { margin:0 0 4px; }
+.safety-analysis { margin:0 0 13px; }
+
+@media (min-width:760px) {
+  body { padding:26px 0; }
+  .shell { width:min(1180px,calc(100% - 48px)); min-height:calc(100vh - 52px); padding:34px 42px 112px; border-radius:28px; box-shadow:0 22px 64px #24483a24; }
+  .topbar { margin-bottom:24px; }
+  .topbar h1 { font-size:34px; }
+  .recipient-switcher { margin:0 0 18px; padding:13px 15px; }
+  .recipient-switcher label { max-width:430px; }
+  .status-card { margin-bottom:20px; padding:17px 18px; }
+  .nav { width:min(1180px,calc(100% - 48px)); bottom:26px; padding:11px 24px; border:1px solid var(--line); border-radius:0 0 28px 28px; box-shadow:0 -7px 26px #264a3b12; }
+  .nav-item { padding:9px 7px; font-size:13px; }
+  .view.active[data-view="home"] { display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:16px; align-items:start; }
+  .view.active[data-view="home"] > .heading { grid-column:1 / -1; margin:5px 0 2px; }
+  .view.active[data-view="home"] > .focus-card { grid-column:span 7; margin:0; min-height:180px; display:flex; flex-direction:column; justify-content:center; }
+  .view.active[data-view="home"] > .metric-grid { grid-column:span 5; margin:0; align-self:stretch; }
+  .view.active[data-view="home"] > .plan-card { grid-column:span 7; margin:0; }
+  .view.active[data-view="home"] > .health-grid { grid-column:span 5; margin:0; }
+  .view.active[data-view="home"] > .next-card { grid-column:1 / -1; margin:0; display:grid; grid-template-columns:160px minmax(0,1fr); column-gap:18px; align-items:center; }
+  .view.active[data-view="home"] > .next-card .eyebrow { grid-row:1 / span 2; align-self:start; padding-top:4px; }
+  .view.active[data-view="home"] > .next-card h3 { margin:0; }
+  .view.active[data-view="home"] > .next-card p { margin:4px 0 0; }
+  .focus-card,.next-card,.analysis,.event,.status-card,.panel,.plan-card { border-radius:20px; }
+  .focus-card { padding:26px; }
+  .focus-card h3 { font-size:25px; line-height:1.28; }
+  .focus-card p:last-child { font-size:14px; }
+  .metric { min-height:84px; padding:16px; }
+  .metric strong { font-size:30px; }
+  .metric span { font-size:12px; }
+  .health-grid { grid-template-columns:1fr; }
+  .health-card { padding:17px; }
+  .heading { margin:30px 0 16px; }
+  .heading h2 { font-size:26px; }
+  .panel { padding:20px; margin-bottom:16px; }
+  .form-grid { grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:18px; }
+  .form-grid > h3,.form-grid > p,.form-grid > button,.form-grid > label:has(textarea),.form-grid > div:has(.choice-grid) { grid-column:1 / -1; }
+  .choice-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .event-list { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .event { padding:15px; }
+  .safety-action-card { padding:22px; }
+  .safety-steps { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .safety-step { min-height:144px; }
+  .safety-handoff { display:grid; grid-template-columns:190px minmax(0,1fr); gap:12px; align-items:start; }
+  .safety-handoff ul { margin:0; columns:2; }
+  .safety-ask-form { grid-template-columns:1fr auto; align-items:end; }
+  .safety-ask-form > p,.safety-ask-form > h3 { grid-column:1 / -1; }
+  .safety-ask-form label { min-width:0; }
+  .safety-ask-form button { width:auto; min-width:224px; }
+  .safety-analysis { padding:20px; }
+}
+
+@media (min-width:1040px) {
+  .view.active[data-view="home"] > .focus-card { min-height:196px; }
+  .health-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .health-card:last-child:nth-child(odd) { grid-column:1 / -1; }
+}

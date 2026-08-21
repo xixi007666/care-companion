@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#145345" />
+    <title>好好照护 · 家庭照护仪表盘</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/comparison-chart.css" />
+    <link rel="stylesheet" href="/recipients.css" />
+    <link rel="stylesheet" href="/desktop-dashboard.css" />
+    <link rel="stylesheet" href="/polished-ui.css" />
+    <link rel="stylesheet" href="/playful-ui.css" />
+    <link rel="stylesheet" href="/vivid-ui.css" />
+    <link rel="stylesheet" href="/grounded-ui.css" />
+    <link rel="stylesheet" href="/food-ideas.css" />
+    <link rel="stylesheet" href="/joyful-ui.css" />
+  </head>
+  <body>
+    <svg class="icon-sprite" aria-hidden="true" focusable="false">
+      <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M19.7 4.3C12.5 4.1 6.9 7.1 5 12.7c-1 3.1.5 5.9 3.6 6.6 5.9 1.3 10-4.5 11.1-15Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/><path d="M5.7 18.3c2.1-3.2 5.1-5.8 9.8-8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/></symbol>
+      <symbol id="icon-dashboard" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="14" y="4" width="6" height="10" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="4" y="14" width="6" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="14" y="18" width="6" height="2" rx="1" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+      <symbol id="icon-eye" viewBox="0 0 24 24"><path d="M3.8 12s2.9-5.2 8.2-5.2S20.2 12 20.2 12 17.3 17.2 12 17.2 3.8 12 3.8 12Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/><circle cx="12" cy="12" r="2.4" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+      <symbol id="icon-note" viewBox="0 0 24 24"><path d="M6 3.8h8l4 4V19a1.7 1.7 0 0 1-1.7 1.7H6A1.7 1.7 0 0 1 4.3 19V5.5A1.7 1.7 0 0 1 6 3.8Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"/><path d="M14 3.8V8h4M8 12h7M8 16h5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></symbol>
+      <symbol id="icon-spark" viewBox="0 0 24 24"><path d="m12 3 1.4 5.6L19 10l-5.6 1.4L12 17l-1.4-5.6L5 10l5.6-1.4L12 3ZM18.4 15.1l.7 2.7 2.7.7-2.7.7-.7 2.7-.7-2.7-2.7-.7 2.7-.7.7-2.7Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"/></symbol>
+      <symbol id="icon-sliders" viewBox="0 0 24 24"><path d="M5 6h14M5 18h14M5 12h14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/><circle cx="9" cy="6" r="2" fill="#fff" stroke="currentColor" stroke-width="1.8"/><circle cx="15" cy="12" r="2" fill="#fff" stroke="currentColor" stroke-width="1.8"/><circle cx="10" cy="18" r="2" fill="#fff" stroke="currentColor" stroke-width="1.8"/></symbol>
+      <symbol id="icon-food" viewBox="0 0 24 24"><path d="M4 12h16c0 4.1-3.5 7.3-8 7.3S4 16.1 4 12Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"/><path d="M7 9.5c1.2-2.2 3.5-3.6 6.1-3.6 1.6 0 3.1.5 4.3 1.5M12.3 5.8c-.4-1.2.1-2.3 1.4-3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/></symbol>
+      <symbol id="icon-pill" viewBox="0 0 24 24"><path d="m8.1 5.3 10.6 10.6a3.7 3.7 0 0 1-5.2 5.2L2.9 10.5a3.7 3.7 0 0 1 5.2-5.2Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"/><path d="m6.1 13.7 5.6-5.6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/></symbol>
+      <symbol id="icon-safety" viewBox="0 0 24 24"><path d="M12 3.7 19 6v5.3c0 4.2-2.8 7.7-7 9-4.2-1.3-7-4.8-7-9V6l7-2.3Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"/><path d="M12 8v4.2M12 16h.01" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></symbol>
+      <symbol id="icon-bell" viewBox="0 0 24 24"><path d="M18.4 10.3c0-3.6-2.5-6.1-6.4-6.1s-6.4 2.5-6.4 6.1c0 4.4-1.8 5.2-1.8 6.2h16.4c0-1-1.8-1.8-1.8-6.2Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/><path d="M9.4 19.1c.5.7 1.4 1.1 2.6 1.1s2.1-.4 2.6-1.1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/></symbol>
+      <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9"/></symbol>
+      <symbol id="icon-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.4 10V7.5a3.6 3.6 0 0 1 7.2 0V10M12 14v2.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/></symbol>
+      <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.6V12l3 1.9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></symbol>
+    </svg>
+    <main class="shell">
+      <section class="auth-card" id="authView">
+        <p class="eyebrow">家庭照护仪表盘 · BYOK 试运营版</p>
+        <h1>好好照护</h1>
+        <p class="intro">为儿童与老年人建立连续照护记录：日常观察、饮食健康、结构化分析和紧急行动卡。</p>
+        <form id="authForm">
+          <label>邮箱<input name="email" type="email" autocomplete="email" required placeholder="you@example.com" /></label>
+          <label>密码<input name="password" type="password" autocomplete="current-password" minlength="12" required placeholder="至少 12 位" /></label>
+          <button class="primary" id="authSubmit" type="submit">登录</button>
+        </form>
+        <button class="link-button" id="authModeButton" type="button">没有账号？创建试用账号</button>
+        <p class="fine-print">请勿将真实姓名、联系方式、证件号或原始图片写入试用记录。</p>
+      </section>
+
+      <section id="appView" hidden>
+        <header class="topbar">
+          <div class="brand-lockup"><span class="brand-mark" aria-hidden="true"><svg><use href="#icon-leaf"></use></svg></span><div><p class="eyebrow">家庭照护仪表盘</p><h1>好好照护</h1></div></div>
+          <div class="topbar-actions"><span class="today-stamp" id="todayStamp"></span><button class="link-button" id="logoutButton" type="button">退出</button></div>
+        </header>
+        <section class="recipient-switcher" id="recipientSwitcher"></section>
+        <section class="status-card" id="statusCard"></section>
+
+        <section class="view active" data-view="home">
+          <div class="heading dashboard-heading"><div><p class="eyebrow" id="homeSceneLabel">连续照护记录</p><h2 id="homeTitle">添加一位照护对象</h2></div><button class="round-button" data-go="record" type="button" aria-label="新增日常记录">＋</button></div>
+          <section class="focus-card" id="focusCard"></section>
+          <section class="continuity-card" id="continuityCard"></section>
+          <section class="metric-grid" id="metricGrid"></section>
+          <section class="quick-actions" id="quickActions"></section>
+          <section class="plan-card" id="planCard"></section>
+          <section class="timeline-card" id="recentTimeline"></section>
+          <section class="alert-overview" id="alertOverview"></section>
+          <section class="health-grid" id="supportCards"></section>
+          <section class="next-card"><span class="privacy-orbit" aria-hidden="true"><svg><use href="#icon-lock"></use></svg></span><div class="privacy-copy"><p class="eyebrow">隐私边界</p><h3>AI 只看去身份化摘要</h3><p>原始备注、药品标记和紧急事件不会直接发送给模型。</p></div><div class="privacy-flow" aria-label="原始内容只在本地加密保存，模型只收到去身份化摘要"><span>原始内容</span><i>→</i><strong><svg aria-hidden="true"><use href="#icon-lock"></use></svg>加密摘要</strong><i>→</i><em>AI</em></div></section>
+        </section>
+
+        <section class="view" data-view="screening">
+          <div class="heading"><div><p class="eyebrow" id="screeningEyebrow">连续观察</p><h2 id="screeningTitle">先建立可比较的基线</h2></div></div>
+          <section class="screening-intro" id="screeningIntro"><p id="screeningIntroCopy"></p><div class="observation-steps"><span><b>1</b> 选择最接近日常的答案</span><span><b>2</b> 建立可比较的基线</span><span><b>3</b> 得到下一周观察重点</span></div><p class="comparison-hint">每轮答案都加密保存，只与你自己的上一轮比较；原始答案不会发送给 AI。</p><button class="primary" id="startScreeningButton" type="button">开始首次 8 题观察</button></section>
+          <section class="screening-flow" id="screeningFlow" hidden></section>
+          <section class="screening-result" id="screeningResult" hidden></section>
+        </section>
+
+        <section class="view" data-view="record">
+          <div class="heading"><div><p class="eyebrow">加密记录</p><h2 id="recordTitle">留下可比较的事实</h2></div></div>
+          <section class="record-brief"><span class="record-brief-icon" aria-hidden="true"><svg><use href="#icon-note"></use></svg></span><p><b>一条好记录：</b>什么时候 · 发生什么 · 持续多久 · 之后如何</p></section>
+          <form class="panel form-grid" id="eventForm">
+            <label>发生时间<input name="occurredAt" type="datetime-local" required /></label>
+            <label>记录类别<select name="category" id="eventCategory"></select></label>
+            <label>当前状态<select name="mood" id="eventMood"></select></label>
+            <label>谁记录的<select name="reporter"><option value="primary_caregiver">主要照护者现场记录</option><option value="family_caregiver">其他家属现场记录</option><option value="care_worker">护理人员现场记录</option><option value="relayed">事后转述</option></select></label>
+            <label>记录依据<select name="basis"><option value="direct_observation">当时现场观察</option><option value="plan_check">对照既有计划/清单</option><option value="uncertain">暂不确定</option></select></label>
+            <label>简短备注 <span>选填，240 字以内</span><textarea name="note" maxlength="240" id="eventNote"></textarea></label>
+            <p class="privacy-inline">🔒 “谁记录的”和“记录依据”只用于判断这条记录能否作为连续比较的家庭事实，不填写真实姓名；记录仍会 AES 加密保存。</p>
+            <button class="primary" type="submit">保存记录</button>
+          </form>
+          <div class="heading compact"><h2>最近记录</h2><button class="link-button danger" id="refreshEvents" type="button">刷新</button></div>
+          <section class="event-list" id="eventList"></section>
+        </section>
+
+        <section class="view" data-view="food">
+          <div class="heading"><div><p class="eyebrow">今日饮食记录</p><h2 id="foodTitle">把一餐拆成可比较的事实</h2></div><button class="link-button" data-go="home" type="button">返回首页</button></div>
+          <form class="panel form-grid" id="foodForm">
+            <label>用餐时间<input name="occurredAt" type="datetime-local" required /></label>
+            <label>这一餐<select name="mealType"><option>早餐</option><option>午餐</option><option>晚餐</option><option>加餐</option></select></label>
+            <div><p class="form-note">食物类别（至少选一项）</p><div class="choice-grid"><label><input name="groups" type="checkbox" value="主食" />主食</label><label><input name="groups" type="checkbox" value="优质蛋白" />优质蛋白</label><label><input name="groups" type="checkbox" value="蔬菜水果" />蔬菜水果</label></div></div>
+            <div><p class="form-note">出现的颜色（可多选）</p><div class="choice-grid"><label><input name="colors" type="checkbox" value="红橙" />红橙</label><label><input name="colors" type="checkbox" value="绿色" />绿色</label><label><input name="colors" type="checkbox" value="紫蓝" />紫蓝</label><label><input name="colors" type="checkbox" value="白黄" />白黄</label></div></div>
+            <label>食欲<select name="appetite" id="foodAppetite"></select></label>
+            <label>餐后情况<select name="reaction" id="foodReaction"></select></label>
+            <label>谁记录的<select name="reporter"><option value="primary_caregiver">主要照护者现场记录</option><option value="family_caregiver">其他家属现场记录</option><option value="care_worker">护理人员现场记录</option><option value="relayed">事后转述</option></select></label>
+            <label>记录依据<select name="basis"><option value="direct_observation">当时现场观察</option><option value="plan_check">对照既有计划/清单</option><option value="uncertain">暂不确定</option></select></label>
+            <label>今日食材 <span>选填，120 字以内；可写食材名称或主要搭配</span><textarea name="note" maxlength="120" id="foodNote"></textarea></label>
+            <p class="privacy-inline">🔒 保存后，“今日食材”会加密保存，且不会自动进入周报或模型。只有你主动点击下方按钮时，本次当前输入的食材和用餐偏好才会发送给你自己的模型。</p>
+            <section class="food-ai-launch" aria-labelledby="foodIdeaTitle">
+              <span class="food-ai-icon" aria-hidden="true"><svg><use href="#icon-spark"></use></svg></span>
+              <div><p class="eyebrow">本次食材 · 主动生成</p><h3 id="foodIdeaTitle">生成两种家常做法</h3><p>根据这次输入的食材、用餐类型和当前对象分层，整理家常搭配与步骤。</p></div>
+              <button class="secondary" type="button" id="generateMealIdeas">生成食谱灵感</button>
+              <p class="food-ai-consent">非医疗营养建议。请自行核对过敏、年龄适配及咀嚼/吞咽限制；疾病相关饮食或喂养问题请咨询专业人员。</p>
+            </section>
+            <button class="primary" type="submit">保存这一餐</button>
+          </form>
+          <section class="analysis food-ai-output" id="foodAIOutput"><p>填写“今日食材”后，可主动生成两种家常食谱灵感；本次生成内容不会自动保存为饮食记录。</p></section>
+          <section class="panel"><h3>今天的饮食小结</h3><div class="compact-list" id="foodTodayList"></div></section>
+        </section>
+
+        <section class="view" data-view="medication">
+          <div class="heading"><div><p class="eyebrow">老年人用药记录</p><h2>先确认，再一键留存</h2></div><button class="link-button" data-go="home" type="button">返回首页</button></div>
+          <section class="panel"><h3>照片识别还未开放</h3><p class="local-only">当前版本只做加密的手动确认记录，不上传或识别药品图片。后续如加入拍照识别，必须保留人工确认，且不能据此自动给出服药或剂量建议。</p></section>
+          <form class="panel form-grid" id="medicationForm">
+            <label>记录时间<input name="occurredAt" type="datetime-local" required /></label>
+            <label>常用时段<select name="period"><option>早晨药盒</option><option>午间药盒</option><option>晚间药盒</option><option>睡前药盒</option><option>其他时段</option></select></label>
+            <label>本次状态<select name="status"><option>已按计划服用</option><option>未按计划服用</option><option>不确定是否已服</option></select></label>
+            <label>谁记录的<select name="reporter"><option value="primary_caregiver">主要照护者现场记录</option><option value="family_caregiver">其他家属现场记录</option><option value="care_worker">护理人员现场记录</option><option value="relayed">事后转述</option></select></label>
+            <label>记录依据<select name="basis"><option value="plan_check">对照既有计划/清单</option><option value="direct_observation">当时现场观察</option><option value="uncertain">暂不确定</option></select></label>
+            <label>药品标记 <span>选填，仅供家庭区分，不会发送给 AI</span><input name="label" maxlength="40" placeholder="例如：早晨药盒或一号药盒" /></label>
+            <label>本地备注 <span>选填，120 字以内</span><textarea name="note" maxlength="120" placeholder="仅记录事实；不要填写身份信息。"></textarea></label>
+            <p class="local-only">遇到漏服、补服或药物调整问题，请按既有医嘱或联系医生、药师确认；本工具不提供用药决策。</p>
+            <button class="primary" type="submit">加密保存这次用药状态</button>
+          </form>
+          <section class="panel"><h3>今日用药小结</h3><div class="compact-list" id="medicationTodayList"></div></section>
+        </section>
+
+        <section class="view" data-view="safety">
+          <div class="heading"><div><p class="eyebrow">紧急情况行动卡</p><h2>先获得实时帮助，再留存事实</h2></div><button class="link-button" data-go="home" type="button">返回首页</button></div>
+          <section class="panel safety-priority"><p class="eyebrow">第 1 步 · 先求助</p><h3>此刻有危险或正在快速加重？</h3><p class="local-only">若出现意识反应异常、呼吸明显困难、严重出血、疑似误服/中毒、严重受伤或无法起身，请立即联系你所在地的急救或医疗服务。不要等待本页或 AI 的回答。</p></section>
+          <section class="panel safety-action-card" id="safetyActionCard">
+            <p class="eyebrow">第 2 步 · 当前对象的基础行动卡</p>
+            <div id="safetyActionContent"></div>
+          </section>
+          <form class="panel ask-form safety-ask-form" id="safetyAskForm">
+            <p class="eyebrow">第 3 步 · 仅限非紧急的记录整理</p>
+            <h3>让 AI 帮你梳理后续该留存哪些事实</h3>
+            <label>非紧急问题<input name="question" maxlength="300" required id="safetyAskQuestion" placeholder="例如：事后我还应补记哪些事实，方便与家人交接？" /></label>
+            <p class="local-only">AI 只会收到当前对象的去身份化摘要，不会收到紧急事件备注。它不提供诊断、急救指令、药物或剂量建议，也不能替代实时求助。</p>
+            <button class="secondary" id="safetyAskButton" type="submit">使用我的模型梳理留存重点</button>
+          </form>
+          <section class="analysis safety-analysis" id="safetyAIOutput"><p>配置模型后，可在非紧急情况下，让它提示后续应记录哪些事实；遇到危险时先联系当地急救或医疗服务。</p></section>
+          <form class="panel form-grid" id="safetyForm">
+            <h3>第 4 步 · 事后留存（仅用于家庭回看）</h3>
+            <label>发生时间<input name="occurredAt" type="datetime-local" required /></label>
+            <label>主要情况<select name="incidentType" id="safetyIncidentType"></select></label>
+            <label>已经采取的行动<select name="action"><option>已联系当地急救或医疗服务</option><option>正在前往医疗服务</option><option>已向专业人员求助</option></select></label>
+            <label>谁记录的<select name="reporter"><option value="primary_caregiver">主要照护者现场记录</option><option value="family_caregiver">其他家属现场记录</option><option value="care_worker">护理人员现场记录</option><option value="relayed">事后转述</option></select></label>
+            <label>记录依据<select name="basis"><option value="direct_observation">当时现场观察</option><option value="plan_check">对照既有计划/清单</option><option value="uncertain">暂不确定</option></select></label>
+            <label>本地备注 <span>选填，120 字以内</span><textarea name="note" maxlength="120" placeholder="仅记录事实；不要写姓名、电话或证件号。"></textarea></label>
+            <p class="local-only">紧急事件备注只加密保存在本服务端，明确不发送给 AI。</p>
+            <button class="primary" type="submit">加密留存此事件</button>
+          </form>
+          <section class="panel"><h3>最近留存</h3><div class="compact-list" id="safetyIncidentList"></div></section>
+        </section>
+
+        <section class="view" data-view="alerts">
+          <div class="heading"><div><p class="eyebrow">明确规则 · 近 7 天</p><h2>照护关注提醒</h2></div><button class="link-button" data-go="home" type="button">返回仪表盘</button></div>
+          <section class="alert-center" id="alertCenter"><p>日常记录、连续观察、饮食和用药中的可关注事实，会在这里形成可回看的关注提醒。</p></section>
+        </section>
+
+        <section class="view" data-view="ai">
+          <div class="heading"><div><p class="eyebrow">你的模型 · 结构化回答</p><h2>AI 照护报告</h2></div></div>
+          <section class="panel report-launch"><h3>生成本周报告</h3><p id="reportCopy">只发送类别、状态、时间段与本地提取标签；不发送原始备注、药品标记或身份信息。</p><button class="primary" id="reportButton" type="button">使用我的模型生成报告</button></section>
+          <form class="panel ask-form" id="askForm"><label>继续追问<input name="question" maxlength="300" required id="askQuestion" /></label><button class="secondary" type="submit">问照护助手</button></form>
+          <section class="analysis" id="analysisOutput"><p>配置模型并添加至少 3 条记录后，即可生成第一份报告。</p></section>
+        </section>
+
+        <section class="view" data-view="settings">
+          <div class="heading"><div><p class="eyebrow">首次使用配置</p><h2>照护对象与个人模型</h2></div></div>
+          <form class="panel form-grid" id="profileForm">
+            <h3>照护对象档案</h3>
+            <p class="form-note">一个家庭账号可管理多位照护对象。每个人的年龄分层、记录、观察、图表、计划和报告彼此独立；已有记录后，当前对象的场景与年龄模板会锁定，避免数据混在一起。</p>
+            <label>照护别名<input name="alias" maxlength="30" required placeholder="例如：小树或外婆（不填真实姓名）" /></label>
+            <label>照护场景<select name="scene" id="profileScene"><option value="child">儿童 · 连续成长观察</option><option value="senior">老年人 · 日常生活支持</option></select></label>
+            <label>年龄与支持分层 <span>儿童会使用对应年龄的观察模板；老年人会按生活支持程度调整观察重点。</span><select name="segment" id="profileSegment"></select></label>
+            <button class="secondary" type="submit">保存照护对象</button>
+          </form>
+          <form class="panel form-grid" id="llmForm">
+            <h3>我的模型设置（BYOK）</h3>
+            <p class="form-note">支持 OpenAI 兼容接口。Key 只传到本服务端并 AES 加密保存，之后不会回显。</p>
+            <label>API Base URL<input name="baseUrl" type="url" required placeholder="https://你的供应商地址/v1" /></label>
+            <label>模型 ID<input name="model" required maxlength="100" placeholder="按供应商文档填写" /></label>
+            <label>API Key<input name="apiKey" type="password" required maxlength="600" autocomplete="off" placeholder="仅用于加密保存，不会回显" /></label>
+            <button class="primary" type="submit">加密保存并启用</button>
+            <button class="link-button danger" id="removeLLMButton" type="button">删除我的模型配置</button>
+          </form>
+          <section class="panel safety-panel"><h3>试运营边界</h3><ul><li>需要部署到 HTTPS 域名后再开放外部注册。</li><li>模型不做诊断、处方、用药剂量或紧急处置替代。</li><li>任何紧急或快速加重症状，应先联系当地急救或医疗服务。</li></ul></section>
+        </section>
+
+        <nav class="nav" aria-label="主要功能"><button class="nav-item active" data-go="home" data-nav-label="仪表盘" type="button"><svg class="nav-icon" aria-hidden="true"><use href="#icon-dashboard"></use></svg><span>仪表盘</span></button><button class="nav-item" data-go="screening" data-nav-label="观察" type="button"><svg class="nav-icon" aria-hidden="true"><use href="#icon-eye"></use></svg><span>观察</span></button><button class="nav-item" data-go="record" data-nav-label="记录" type="button"><svg class="nav-icon" aria-hidden="true"><use href="#icon-note"></use></svg><span>记录</span></button><button class="nav-item" data-go="alerts" data-nav-label="关注提醒" type="button"><svg class="nav-icon" aria-hidden="true"><use href="#icon-bell"></use></svg><span>关注</span></button><button class="nav-item" data-go="ai" data-nav-label="AI 报告" type="button"><svg class="nav-icon" aria-hidden="true"><use href="#icon-spark"></use></svg><span>AI 报告</span></button><button class="nav-item" data-go="settings" data-nav-label="设置" type="button"><svg class="nav-icon" aria-hidden="true"><use href="#icon-sliders"></use></svg><span>设置</span></button></nav>
+      </section>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

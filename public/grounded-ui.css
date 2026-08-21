@@ -1,0 +1,47 @@
+/* Grounded colour correction: richer pigment, lower glare, and denser desktop use of space. */
+:root {
+  --brand:#1b7866;
+  --mint:#dcece5;
+  --paper:#fbfaf7;
+  --line:#d7e1da;
+  --ink:#153f38;
+  --muted:#60776f;
+}
+
+body { background:linear-gradient(135deg,#e8e0d2 0%,#edf0e9 48%,#d9e7e2 100%); }
+.shell { background:#fbfaf7; box-shadow:0 22px 54px rgba(34,67,56,.14); }
+.brand-mark { background:linear-gradient(145deg,#2b8a73,#1d685b); box-shadow:0 8px 17px rgba(30,89,75,.23); }
+.topbar h1 { background:linear-gradient(90deg,#164f44,#2b7967); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.today-stamp { color:#4d6e64; background:#e6eee8; }
+.recipient-switcher label { background:#edf3ef; }.recipient-switcher button { color:#295e52; background:#ead89a; }
+
+.status-card { border-left-color:#c99b3e; background:linear-gradient(105deg,#edf3ef,#f4efe4); }.status-card::after { background:#b9ab7a; opacity:.26; }.status-orb { color:#fff; background:linear-gradient(145deg,#d3ac58,#ab8137); }.status-orb.ready { background:linear-gradient(145deg,#438d76,#2a705f); }
+
+.focus-card { background:linear-gradient(125deg,#155f51,#247968 57%,#4b907d); box-shadow:0 14px 32px rgba(27,87,71,.22); }.focus-card::before { box-shadow:0 0 0 28px rgba(255,255,255,.055),0 0 0 61px rgba(255,255,255,.03); }.focus-card::after { background:#c9a05c; opacity:.2; }.focus-copy .eyebrow i { background:#e4c071; box-shadow:0 0 0 4px rgba(228,192,113,.15); }.focus-action { color:#245d50; background:linear-gradient(145deg,#fffdf3,#e8d8a6); box-shadow:0 6px 13px rgba(15,62,51,.15); }.focus-action:hover { background:#e2cf94; }
+
+.metric { border-top-color:#559b81; box-shadow:0 7px 17px rgba(34,65,56,.08); }.metric-green { background:linear-gradient(145deg,#e2efe7,#f9fcfa); }.metric-blue { border-top-color:#719bb3; background:linear-gradient(145deg,#dfeaf0,#f8fafb); }.metric-orange { border-top-color:#c88858; background:linear-gradient(145deg,#f0dfb8,#fbf8f0); }.metric-violet { border-top-color:#82709e; background:linear-gradient(145deg,#e5deeb,#faf9fc); }.metric-icon { color:#377d68; background:#fffdfa; box-shadow:0 3px 7px rgba(44,70,60,.08); }.metric-blue .metric-icon { color:#597d95; }.metric-orange .metric-icon { color:#b36e3f; }.metric-violet .metric-icon { color:#725f8d; }
+
+.section-label > p::before { background:#4c8e77; box-shadow:0 0 0 4px #e2eee8; }
+.quick-action { box-shadow:0 7px 15px rgba(34,65,56,.06); }.quick-action:hover { box-shadow:0 11px 22px rgba(34,65,56,.12); }.action-primary { border-top-color:#4b8d76; background:linear-gradient(145deg,#e2f0e8,#fbfdfb); }.action-mint { border-top-color:#7496aa; background:linear-gradient(145deg,#e2edf1,#fbfcfc); }.action-lavender { border-top-color:#83709f; background:linear-gradient(145deg,#e7e1ec,#fbfafc); }.action-primary .quick-icon { background:linear-gradient(145deg,#5a9e86,#397c69); }.action-mint .quick-icon { background:linear-gradient(145deg,#87aebe,#63899d); }.action-lavender .quick-icon { background:linear-gradient(145deg,#9a87b2,#76628d); }.quick-arrow { color:#4d806e; }.action-mint .quick-arrow { color:#62869b; }.action-lavender .quick-arrow { color:#76628d; }
+
+.plan-card { border-top-color:#5c967f; background:linear-gradient(145deg,#fffefa,#f6faf7); }.plan-week-chip { color:#386c5d; background:#e3eee7; }.plan-progress { background:#e1e9e3; }.plan-progress i { background:linear-gradient(90deg,#42866f,#6da38a 60%,#b2a16c); }.plan-task .plan-day { color:#3d7765; background:#eaf2ed; }.plan-task.done .plan-day { background:linear-gradient(145deg,#649d84,#467b68); }
+.timeline-card { border-top-color:#779aaa; background:linear-gradient(145deg,#fffefa,#f7faf9); }.timeline-icon { background:#e7eff0; }.timeline-medication .timeline-icon { background:#e7e1ed; }.timeline-safety .timeline-icon { background:#f2e1d4; }.timeline-food .timeline-icon { background:#f2e7c9; }
+
+.food-tool { border-top-color:#be9145; background:linear-gradient(145deg,#f0e3b5,#fbf8f0); }.food-tool .tool-icon { color:#a06a2e; }.medication-tool { border-top-color:#847198; background:linear-gradient(145deg,#e6dfea,#faf9fb); }.medication-tool .tool-icon { color:#67557d; }.safety-tool { border-top-color:#bf7556; background:linear-gradient(145deg,#efd9cc,#fbf6f3); }.safety-tool .tool-icon { color:#a25338; }.tool-link { color:#3b7664; }.safety-tool .tool-link { color:#994f36; }.medication-tool .tool-link { color:#655078; }
+
+.next-card { border-left-color:#6692a1; background:linear-gradient(100deg,#e5eef0,#edf3ef); }.privacy-orbit { color:#406f80; background:#d6e6ea; }.privacy-copy { min-width:0; }.privacy-flow { display:flex; align-items:center; justify-content:flex-end; gap:8px; min-width:0; color:#53766e; font-size:11px; font-weight:700; white-space:nowrap; }.privacy-flow span,.privacy-flow strong,.privacy-flow em { display:flex; align-items:center; gap:5px; padding:8px 10px; border-radius:10px; font-style:normal; }.privacy-flow span { color:#687973; background:#f9fbfa; }.privacy-flow strong { color:#3d6b5d; background:#d7e8df; }.privacy-flow strong svg { width:13px; height:13px; }.privacy-flow em { color:#4f7182; background:#dbe9ec; }.privacy-flow i { color:#7a948a; font-size:14px; font-style:normal; }
+
+.record-brief { border-left-color:#518c77; background:linear-gradient(100deg,#e5f0ea,#edf2f1); }.record-brief-icon { background:linear-gradient(145deg,#5a9b84,#3c7967); }.screening-intro { border-top-color:#789aa9; background:linear-gradient(135deg,#eaf1f0,#fffdf9); }.observation-steps b { background:linear-gradient(145deg,#5a9b84,#3c7967); }.observation-steps span:nth-child(2) b { background:linear-gradient(145deg,#88aab8,#618695); }.observation-steps span:nth-child(3) b { background:linear-gradient(145deg,#cc9667,#a86d44); }
+
+.nav { border-top-color:#d2dfd8; background:rgba(255,255,255,.96); }.nav-item.active { color:#2a7462; }.nav-item.active .nav-icon { color:#2d8069; }
+.primary { background:linear-gradient(135deg,#2a806b,#216c60); box-shadow:0 7px 13px rgba(35,102,86,.2); }.primary:hover { background:linear-gradient(135deg,#368a73,#276f62); }.secondary { color:#2b6f5f; background:linear-gradient(135deg,#e0ece5,#e8eeea); }.round-button { background:linear-gradient(145deg,#438d76,#286e60); }
+.safety-priority { border-color:#c99b55; background:linear-gradient(135deg,#f6e8cf,#fbf7ef); }.safety-action-card { border-top-color:#be785b; background:linear-gradient(135deg,#f1e1d8,#fcfaf6); }.safety-step > span { background:linear-gradient(145deg,#bd7e61,#98533c); }
+
+@media (min-width:760px) {
+  .view.active[data-view="home"] > .health-grid.two-tools { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .view.active[data-view="home"] > .next-card { display:grid; grid-template-columns:42px minmax(260px,1fr) minmax(330px,.92fr); column-gap:15px; align-items:center; }
+}
+
+@media (max-width:759px) {
+  .privacy-flow { justify-content:flex-start; flex-wrap:wrap; margin-top:10px; }.privacy-flow span,.privacy-flow strong,.privacy-flow em { padding:6px 8px; }.privacy-flow i { font-size:12px; }
+}
